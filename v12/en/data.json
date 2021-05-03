@@ -1,0 +1,275 @@
+{
+    "version": "0.1",
+    "pageContent": 
+	{
+        "_comments": "object that contains data for page labels, buttons, etc.",
+        "navItems": 
+		{
+            "_common": 
+			{
+                "buttonBackToGallery": 
+				{
+                    "name": "Back To Gallery",
+					"method": "backToGallery()",
+					"idName": "backToGallery"	
+                },
+                "buttonStartTutorial": 
+				{
+                    "name": "Start Tutorial",
+					"method": "startTutorialFromDetailsScreen()",
+					"idName": "startTutorial"
+                },
+				"buttonViewDetails": 
+				{
+                    "name": "View Details",
+					"method": "viewDetails()",
+					"idName": "stepsViewDetails"	
+                }
+            }
+        }
+    },
+    "tutorial": 
+	{
+        "_common": 
+		{
+            "name": "Unit Testing - Creating a Message Assembly file for use with Test Driven Development",
+            "shortDescription": "Learn how to use the Message Assembly Editor for viewing, creating and updating Message Assembly (.mxml) files for use with Test Driven Development.",
+            "durationText": "This tutorial takes approximately",
+            "durationTime": "15 minutes",
+            "_resourceToOpenComment": "The ID of the first resource to open when the user imports the tutorial. Resource IDs are defined in the repo_metadata.json Tutorials listing on ot4i.",
+            "resourceToOpen": "ExampleRouterFlow",
+            "helpLink": 
+			{
+                "text": "IBM Knowledge Center",
+           		"link": "https://www.ibm.com/support/knowledgecenter/en/SSTTDS_11.0.0/com.ibm.ace.home.doc/help_home.htm"
+            }
+        },
+        "pageDetails": 
+		{
+            "topicsName": "Tutorial topics",
+            "_topicListComment": "A short list of product concepts or tasks demonstrated by this tutorial",
+            "topicList": 
+			[
+                {
+                    "title": "Java Unit Testing"
+                },
+                {
+                    "title": "Message Assembly Editor"
+                }				
+            ],
+            "outcomesName": "Learning outcomes",
+            "_outcomesComment": "A description of what the user will have learned or accomplished by running this tutorial.",
+            "outcomeList": 
+			[
+                {
+                    "title": "Use the Message Assembly Editor to create a message assembly file which represents the logical tree for a JSON message."
+                },
+				{
+                    "title": "Update a provided unit test for a Compute node to use the message assembly file you created."
+                },
+				{
+                    "title": "Show the unit test fails until you change the Compute node's ESQL to match the new output, and then show the unit test passes!"
+                }
+            ],
+            "summary": 
+			{
+                "overviewName": "Overview",
+                "_overviewComment": "A short description of what happens in this tutorial, and an optional short explanation of the ACE concepts used in this tutorial if necessary for context. What background knowledge must the user have for this to make sense?",
+                "sections": 
+				[
+					 {
+                        "section": "THIS TUTORIAL IS WORK IN PROGRESS SO MAY NOT YET WORK! This tutorial provides a simple message flow (HTTPInput > Compute > HTTPReply) in an application that receives an XML input message representing a simple fictitious purchase order over HTTP and simply echoes it back to the requester. A Test Project is provided which contains a simple unit test which uses two message assembly files representing the logical tree immediately before and after the Compute node in the flow."
+					 },
+					 {
+                        "section": "The tutorial describes how to use the message assembly editor to create a new message assembly file to represent a JSON output tree. The unit test is updated to reference the new output, and will fail until the message flow's Compute node ESQL is also updated to generate the new output. This demonstrates a very simplified piece of test driven development."					
+					 }
+                ]
+            },
+			"helpLinks": 
+			{
+				"_helpLinksComment": "Helplinks that have a type:web attribute are rendered as web links. Otherwise, links are assumed to be to embedded Help topics in the Knowledge Center.",
+				"title": "Find out more",
+				"details": 
+				[
+					{
+						"title": "Knowledge Center link to ",
+						"description": "Developing unit tests using Test Projects",
+						"link": "https://www.ibm.com/support/knowledgecenter/en/SSTTDS_11.0.0/com.ibm.etools.mft.doc/bi12002_.htm",
+						"type": "web"
+					},
+					{					
+						"title": "Knowledge Center link to ",
+						"description": "Using the Message Assembly Editor",
+						"link": "https://www.ibm.com/support/knowledgecenter/en/SSTTDS_11.0.0/com.ibm.etools.mft.doc/bi12002_.htm",
+						"type": "web"
+					}
+				]
+			}
+        },
+        "pageSteps": 
+		{
+            "create": 
+			{
+                "overview": 
+				{
+                    "name": "Create",
+                    "heading": "Import a project",
+                    "_createComment": "A description of what will happen when the user clicks Import.",
+                    "sections": 
+					[
+                        {
+                            "section": "Click <span class='uicontrol'>Import</span> and two projects will be added to your workspace. The application named <span class='application'>ExampleTestDrivenDevelopment</span> provides a single message flow named <span class='resource'>PurchaseFlow</span> which receives data over HTTP. The test project named <span class='application'>ExampleTestDrivenDevelopment_IntegrationTest</span> contains two example message assembly files and a simple unit test for the Compute node in the message flow."
+						},						
+						{				
+						 	"section": "DONT THINK WE WILL NEED THIS STEP! From the Integration Explorer view in the bottom left corner of the Toolkit, right-click the Integration Servers folder and select the option to <span class='uicontrol'>Create a local integration server</span>. Leave all the options with their default values and click Finish. The local Integration Server will be started, using a project in your Toolkit's workspace as the work directory. Click OK to dismiss the Success dialog."
+						},						
+						{
+							"section": "Now move to the Prepare section where we will send data through the flow, experience the message assembly editor and do some test driven development using the scenario."
+						 }
+					 ]
+				 },
+                "helpLinks": 
+				{
+                    "title": "Find out more",
+                    "details": 
+					[
+                        {
+                            "title": "Knowledge Center link to ",
+                            "description": "Developing integration solutions by using applications",
+                            "link": "https://www.ibm.com/support/knowledgecenter/en/SSTTDS_11.0.0/com.ibm.etools.mft.doc/bi12002_.htm",
+							"type": "web"
+                        }
+                    ]
+                },
+                "actions": 
+				{
+                    "title": "Create Actions",
+                    "details": 
+					[
+                        {
+                            "name": "Import",
+                            "method": "importArtifacts()"
+                        }
+                    ]
+                }
+            },
+            "prepare": 
+			{
+                "overview": 
+				{
+                    "name": "Prepare",
+                    "heading": "",
+                    "_prepareComment": "A description of what just happened when the user clicked Import, and what will happen when the user clicks Deploy.",
+                    "sections": 
+		     [				 
+				{
+                "section":"<b>Run the provided unit test which should PASS</b>",
+                "steps":{
+                  "type":"ordered",
+                  "details":[
+                    {
+                      "details": "The provided Test project, <span class='application'>ExampleTestDrivenDevelopment_IntegrationTest</span> contains a reference to the application <span class='application'>ExampleTestDrivenDevelopment</span>. Right-click the test project <span class='application'>ExampleTestDrivenDevelopment_IntegrationTest</span> and choose the option to <span class='application'>Run Test Project</span>. After a few seconds, an integration server will be started which runs the test. The console window at the base of the Toolkit should show the progress of the server being started to run the test. Final results are reported in the JUnit view in the top left of the Toolkit."
+					}
+				  ]
+				}
+			   },				
+			   {
+                "section":"<b>Create a new Message Assembly file to represent a JSON output tree</b>",
+                "steps":{
+                  "type":"ordered",
+                  "details":[
+                    {
+                      "details":"Right-click the resources folder in the <span class='application'>ExampleTestDrivenDevelopment_IntegrationTest</span> and choose the menu option <span class='application'>New > Message Assembly</span>. Type the Message assembly name of PurchaseFlow_Compute_output_JSON.mxml and click Finish."
+                    },
+                    {
+                      "details":"The new Message Assembly file will open in the Message Assembly editor. You will see the root folder named MessageAssembly. Right-click MessageAssembly and choose Add Message. When the Create Message Tree dialog launches, keep the Message Tree Transport Protocol as HTTP and for Message Tree Body Parser, select JSON (Object) and click Finish. Expand the JSON folder, and right-click the Data root element and select Add JSON Child Object. Rename NewObject to be Name, leave its Type as CHARACTER. In the Value column type the value <b>Joe Bloggs</b>. Add another JSON Child Object named Total, change its data type to be DECIMAL, and make its value <b>15.98</b>. Save the file."						
+                    },
+					{
+                      "details":"To keep the message flow coding as simple as possible, we will rely on the HTTPReply node to construct the required HTTP header on the message at the end of the flow. For this reason, right click the HTTPInputHeader and choose the option to <b>Delete</b> the header. Save the file."						
+                    },
+					{
+                      "details":"In order to match the input test message, you also need to expand the Properties header, locate the ReplyIdentifier field and in the value column insert forty-eight zeros! To avoid making a mistake, you can copy and paste the value from the input message assembly file, or from here: <code>000000000000000000000000000000000000000000000000</code><br>Save the file."						
+                    }
+                  ]
+                }
+              },
+			   {
+                "section":"<b>Edit the unit test to use the new Message Assembly file</b>",
+                "steps":{
+                  "type":"ordered",
+                  "details":[
+                    {
+                      "details":"In the Test project <span class='application'>ExampleTestDrivenDevelopment_IntegrationTest</span> open the file <span class='application'>ExampleTestDrivenDevelopment_PurchaseFlow_Compute_0001_IntegrationTest.java</span> and edit the reference to the output message assembly file on Line 71 from<br><code>String messageAssemblyPath = \"../resources/PurchaseFlow_Compute_output_data.mxml\";</code> to <br><code>String messageAssemblyPath = \"../resources/PurchaseFlow_Compute_output_JSON.mxml\";</code>. Save the file."
+                    }					
+                  ]
+                }
+              },
+  				{
+                "section":"<b>Run the provided unit test again which should now FAIL</b>",
+                "steps":{
+                  "type":"ordered",
+                  "details":[
+                    {
+                      "details": "Right-click the test project <span class='application'>ExampleTestDrivenDevelopment_IntegrationTest</span> and choose the option to <span class='application'>Run Test Project</span>. Just like before, after a few seconds, an integration server will be started which runs the test. This time the results will report that the test has failed, because the message flow logic has not yet been changed to generate the new JSON output. The error message will say something like <code>Actual name \"XMLNSC\" (path: /Root/XMLNSC) was different to expected name of \"JSON\"</code>. Move to the Run section of the tutorial where we will do the required test driven development and fix the message flow to generate the new output, before finally re-running the test."
+					}
+				  ]
+				}
+			   }		
+             ]
+                },
+                "helpLinks": 
+				{
+                }
+            },
+            "run": 
+			{
+                "overview": 
+				{
+                    "name": "Run",
+                    "heading": "",
+                    "_runComment": "The full steps for the user to run through the tutorial. Use 'sections' to render paragraphs, 'steps' with a type of 'ordered' or 'unordered' to render HTML lists, and 'substeps' to render nested lists.",
+                "sections":[                            
+                {
+                "section":"<b>Edit the Compute node ESQL to generate the JSON output</b>",
+                "steps":{
+                  "type":"ordered",
+                  "details":[
+                    {
+                      "details": "Open <span class='application'>PurchaseFlow_Compute.esql</span> in the application <span class='application'>ExampleTestDrivenDevelopment</span>. Change the code as follows:					<br><code>&nbsp;&nbsp;CREATE FUNCTION Main() RETURNS BOOLEAN<br>&nbsp;&nbsp;BEGIN<br>&nbsp;&nbsp;&nbsp;&nbsp;DECLARE Total DECIMAL 0;<br>&nbsp;&nbsp;&nbsp;&nbsp;DECLARE PurchaseRef REFERENCE TO InputRoot.XMLNSC.MyOrder.Items;<br>&nbsp;&nbsp;&nbsp;&nbsp;MOVE PurchaseRef FIRSTCHILD;<br>&nbsp;&nbsp;&nbsp;&nbsp;WHILE LASTMOVE(PurchaseRef) DO<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SET Total = Total + PurchaseRef;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MOVE PurchaseRef NEXTSIBLING;<br>&nbsp;&nbsp;&nbsp;&nbsp;END WHILE;<br>&nbsp;&nbsp;&nbsp;&nbsp;SET OutputRoot.Properties = InputRoot.Properties;<br>&nbsp;&nbsp;&nbsp;&nbsp;SET OutputRoot.JSON.Data.Name = InputRoot.XMLNSC.MyOrder.Name;<br>&nbsp;&nbsp;&nbsp;&nbsp;SET OutputRoot.JSON.Data.Total = Total;<br>&nbsp;&nbsp;&nbsp;&nbsp;RETURN TRUE;<br>&nbsp;&nbsp;END;<br></code>Save and close the ESQL file."						
+					}
+				  ]
+				}
+			   },
+				{				                
+                "section":"<b>Run the provided unit test again which should now PASS</b>",
+                "steps":{
+                  "type":"ordered",
+                  "details":[
+                    {
+                      "details": "Right-click the test project <span class='application'>ExampleTestDrivenDevelopment_IntegrationTest</span> and choose the option to <span class='application'>Run Test Project</span>. Just like before, after a few seconds, an integration server will be started which runs the test. This time the results will report that the test has now succeeded, because the message flow logic now correctly generates the JSON output tree which matches to the Message Assembly file which we created earlier in the tutorial."
+					}
+				  ]				
+			   }
+			},
+					{
+			    			"section": "This tutorial has shown how to use the message assembly editor and do test driven development whilst developing message flows."
+						}
+                    ]
+                },
+                "helpLinks": 
+				{
+                    "title": "Find out more",
+                    "details": 
+					[                        
+                        {
+                            "title": "Knowledge Center link to ",
+                            "description": "Unit Testing your message flow",
+                            "link": "https://www.ibm.com/support/knowledgecenter/en/SSTTDS_11.0.0/com.ibm.etools.mft.doc/rt26110_.htm",
+							"type": "web"
+                        }
+                    ]
+                }
+            }
+        }
+    }
+}
