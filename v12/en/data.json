@@ -179,7 +179,7 @@
                       "details":"Right-click the resources folder in the <span class='application'>ExampleTestDrivenDevelopment_IntegrationTest</span> and choose the menu option <span class='application'>New > Message Assembly</span>. Type the Message assembly name of PurchaseFlow_Compute_output_JSON.mxml and click Finish."
                     },
                     {
-                      "details":"The new Message Assembly file will open in the Message Assembly editor. You will see the root folder named MessageAssembly. Right-click MessageAssembly and choose Add Message. When the Create Message Tree dialog launches, keep the Message Tree Transport Protocol as HTTP and for Message Tree Body Parser, select JSON (Object) and click Finish. Expand the JSON folder, and right-click the Data root element and select Add JSON Child Object. Rename NewObject to be Name, leave its Type as CHARACTER. In the Value column type the value <b>Joe Bloggs</b>. Add another JSON Child Object named Total, change its data type to be DECIMAL, and make its value <b>15.98</b>. Save the file."						
+                      "details":"The new Message Assembly file will open in the Message Assembly editor. You will see the root folder named MessageAssembly. Right-click <b>MessageAssembly</b> and choose <b>Add Message</b>. When the <b>Create Message Tree</b> dialog launches, keep the <b>Message Tree Transport Protocol</b> as <b>HTTP</b> and for <b>Message Tree Body Parser</b>, select <b>JSON (Object)</b> and click Finish. Expand the JSON folder, and right-click the <b>Data</b> root element and select <b>Add JSON Child Object</b>. Rename <b>NewObject</b> to be <b>Name</b>, leave its <b>Type</b> as <b>CHARACTER</b>. In the <b>Value</b> column insert the value <b>Joe Bloggs</b>. Add another <b>JSON Child Object</b> named <b>Total</b>, change its data type to be <b>DECIMAL</b>, and make its value <b>15.98</b>. Save the file."						
                     },
 					{
                       "details":"To keep the message flow coding as simple as possible, we will rely on the HTTPReply node to construct the required HTTP header on the message at the end of the flow. For this reason, right click the HTTPInputHeader and choose the option to <b>Delete</b> the header. Save the file."						
@@ -196,7 +196,7 @@
                   "type":"ordered",
                   "details":[
                     {
-                      "details":"In the Test project <span class='application'>ExampleTestDrivenDevelopment_IntegrationTest</span> open the file <span class='application'>ExampleTestDrivenDevelopment_PurchaseFlow_Compute_0001_IntegrationTest.java</span> and edit the reference to the output message assembly file on Line 71 from<br><code>String messageAssemblyPath = \"PurchaseFlow_Compute_output_data.mxml\";</code> to <br><code>String messageAssemblyPath = \"PurchaseFlow_Compute_output_JSON.mxml\";</code>. Save the file."
+                      "details":"In the Test project <span class='application'>ExampleTestDrivenDevelopment_IntegrationTest</span> open the file <span class='application'>ExampleTestDrivenDevelopment_PurchaseFlow_Compute_0001_IntegrationTest.java</span> and edit the reference to the output message assembly file on Line 71 from<br><code>String messageAssemblyPath = \"PurchaseFlow_Compute_output_data.mxml\";</code> to <br><code>String messageAssemblyPath = \"PurchaseFlow_Compute_output_JSON.mxml\";</code><br>Save the file."
                     }					
                   ]
                 }
