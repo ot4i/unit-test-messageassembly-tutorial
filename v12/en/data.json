@@ -78,7 +78,7 @@
                 "sections": 
 				[
 					 {
-                        "section": "THIS TUTORIAL IS WORK IN PROGRESS SO MAY NOT YET WORK! This tutorial provides a simple message flow (HTTPInput > Compute > HTTPReply) in an application that receives an XML input message representing a simple fictitious purchase order over HTTP and simply echoes it back to the requester. A Test Project is provided which contains a simple unit test which uses two message assembly files representing the logical tree immediately before and after the Compute node in the flow."
+                        "section": "This tutorial provides a simple message flow (HTTPInput > Compute > HTTPReply) in an application that receives an XML input message representing a simple fictitious purchase order over HTTP and simply echoes it back to the requester. A Test Project is provided which contains a simple unit test which uses two message assembly files representing the logical tree immediately before and after the Compute node in the flow."
 					 },
 					 {
                         "section": "The tutorial describes how to use the message assembly editor to create a new message assembly file to represent a JSON output tree. The unit test is updated to reference the new output, and will fail until the message flow's Compute node ESQL is also updated to generate the new output. This demonstrates a very simplified piece of test driven development."					
@@ -119,10 +119,7 @@
 					[
                         {
                             "section": "Click <span class='uicontrol'>Import</span> and two projects will be added to your workspace. The application named <span class='application'>ExampleTestDrivenDevelopment</span> provides a single message flow named <span class='resource'>PurchaseFlow</span> which receives data over HTTP. The test project named <span class='application'>ExampleTestDrivenDevelopment_IntegrationTest</span> contains two example message assembly files and a simple unit test for the Compute node in the message flow."
-						},						
-						{				
-						 	"section": "DONT THINK WE WILL NEED THIS STEP! From the Integration Explorer view in the bottom left corner of the Toolkit, right-click the Integration Servers folder and select the option to <span class='uicontrol'>Create a local integration server</span>. Leave all the options with their default values and click Finish. The local Integration Server will be started, using a project in your Toolkit's workspace as the work directory. Click OK to dismiss the Success dialog."
-						},						
+						},																		
 						{
 							"section": "Now move to the Prepare section where we will send data through the flow, experience the message assembly editor and do some test driven development using the scenario."
 						 }
@@ -199,7 +196,7 @@
                   "type":"ordered",
                   "details":[
                     {
-                      "details":"In the Test project <span class='application'>ExampleTestDrivenDevelopment_IntegrationTest</span> open the file <span class='application'>ExampleTestDrivenDevelopment_PurchaseFlow_Compute_0001_IntegrationTest.java</span> and edit the reference to the output message assembly file on Line 71 from<br><code>String messageAssemblyPath = \"../resources/PurchaseFlow_Compute_output_data.mxml\";</code> to <br><code>String messageAssemblyPath = \"../resources/PurchaseFlow_Compute_output_JSON.mxml\";</code>. Save the file."
+                      "details":"In the Test project <span class='application'>ExampleTestDrivenDevelopment_IntegrationTest</span> open the file <span class='application'>ExampleTestDrivenDevelopment_PurchaseFlow_Compute_0001_IntegrationTest.java</span> and edit the reference to the output message assembly file on Line 71 from<br><code>String messageAssemblyPath = \"PurchaseFlow_Compute_output_data.mxml\";</code> to <br><code>String messageAssemblyPath = \"PurchaseFlow_Compute_output_JSON.mxml\";</code>. Save the file."
                     }					
                   ]
                 }
